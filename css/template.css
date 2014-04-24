@@ -16,13 +16,9 @@ html, body {
 	height: 100%;
 	width: 100%;
 	font-family: 'helveticaneuecyrroman', helvetica, arial, sans-serif;
-	background: url(../images/svg/pattern.png) 0 0;
-	background: url(../images/svg/pattern.svg) 0 0;
-	background-size: 324px;
 }
-body>.main, body>.main>.left {
+body>.main, body>.main>.svgblock, body>.main>.left {
 	height: 100%;
-	overflow: hidden;
 }
 a {
 	color :#BABCBE;
@@ -33,20 +29,22 @@ a:hover {
 	text-decoration: underline;
 }
 .main {
-	background: url(../images/tracing.png) 2px -1px no-repeat;
-	width: 1280px;
-	margin: 0 auto;
-	background: url(../images/svg/pattern.png) 0 0; 
-	background:  rgba(255,255,255,0.7); 
+	background: url(../images/svg/pattern.png) 0 0;
+	background: url(../images/svg/pattern.svg) 0 0;
 	background-size: 324px;
+	display: table;
+	width: 100%;
+	min-width: 860px;
 }
 .left {
-	width: 274px;
+	width: 20%;
 	float: left;
 	background: #fff;
+	min-width: 170px;
 }
 .left-inner {
-	margin: 30px 0 0 84px;
+	margin: 30px auto 0 auto;
+	width: 152px;
 }
 .head {
 	font-size: 41px;
@@ -68,9 +66,11 @@ a:hover {
 
 }
 .svgblock {
-	width: 1006px;
+	width: 76%;
 	float: left;
-	/* background: #fff; */
+	background:  rgba(255,255,255,0.7); 
+	padding: 2%;
+	text-align: center;
 }
 .svgblock svg>polygon, .svgblock  svg>g *, .svgblock  svg>path {
 	fill: #E5E6E7;
@@ -82,7 +82,8 @@ a:hover {
 }
 /*---*/
 svg#russia {
-	width: 1006px;
-	height: 540px;
-	margin-top: 79px;
+	min-width: 700px;
+	min-height: 540px;
+	max-width: 100%;
+	max-height: 100%;
 }

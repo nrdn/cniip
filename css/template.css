@@ -1,0 +1,62 @@
+div, li, ul, span, a, h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	outline: none;
+	border: none;	
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: helvetica, arial;
+}
+body>.main, body>.main>.left {
+	height: 100%;	
+}
+.main {
+	background: url(../images/tracing.png) 50% 0 no-repeat;
+	width: 1280px;
+	margin: 0 auto;
+}
+.left {
+	width: 274px;
+	float: left;
+	background: #fff;
+}
+.left-inner {
+	margin: 30px 0 0 84px;
+}
+.head {
+	font-size: 41px;
+	line-height: 33px;
+	font-weight: bold;
+}
+.subhead {
+	font-size: 15px;
+	letter-spacing: 0px;
+	margin-top: 2px;
+}
+.menu {
+
+}
+.menu li {
+
+}
+.menu li a {
+
+}
+.svgblock {
+	width: 1006px;
+	float: left;
+	background: #fff;
+}
+.svgblock svg>polygon, .svgblock  svg>g *, .svgblock  svg>path {
+	fill: #E5E6E7;
+	stroke: #BABCBE;
+	stroke-mitter-limit: 10px;
+}
+.svgblock svg>polygon:hover, .svgblock svg>g:hover *, .svgblock svg>path:hover {
+   fill: #333!important;
+}

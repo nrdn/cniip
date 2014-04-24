@@ -18,9 +18,11 @@ html, body {
 	font-family: 'helveticaneuecyrroman', helvetica, arial, sans-serif;
 	background: url(../images/svg/pattern.png) 0 0;
 	background: url(../images/svg/pattern.svg) 0 0;
+	background-size: 324px;
 }
 body>.main, body>.main>.left {
 	height: 100%;
+	overflow: hidden;
 }
 a {
 	color :#BABCBE;
@@ -34,6 +36,9 @@ a:hover {
 	background: url(../images/tracing.png) 2px -1px no-repeat;
 	width: 1280px;
 	margin: 0 auto;
+	background: url(../images/svg/pattern.png) 0 0; 
+	background:  rgba(255,255,255,0.7); 
+	background-size: 324px;
 }
 .left {
 	width: 274px;
@@ -65,7 +70,7 @@ a:hover {
 .svgblock {
 	width: 1006px;
 	float: left;
-	background: #fff;
+	/* background: #fff; */
 }
 .svgblock svg>polygon, .svgblock  svg>g *, .svgblock  svg>path {
 	fill: #E5E6E7;

@@ -1,0 +1,21 @@
+extends ../../layout
+
+block title
+	title СПИСОК ПЕРЕВОДОВ
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/lists.js')
+
+block content
+	a.back_link(href='/auth') < Назад
+	.title СПИСОК ПЕРЕВОДОВ
+	br
+	.main_menu_block
+		each locale in locales
+			.news
+				a.rm_news(href='#', id=locale._id)= 'удалить '
+				!=' | '
+				a(href='/auth/locales/' + locale._id)= locale._id

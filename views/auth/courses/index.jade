@@ -1,0 +1,25 @@
+extends ../../layout
+
+block title
+	title СПИСОК КУРСОВ
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/lists.js')
+
+block content
+	a.back_link(href='/auth') < Назад
+	.title СПИСОК КУРСОВ
+	br
+	.main_menu_block
+		each course in courses
+			.news
+				a.rm_news(href='#', id=course._id)= 'удалить '
+				!=' | '
+				a(href='/auth/edit/courses/' + course._id)= course.title.ru.content
+				b= ' ---> '
+				a(href='/auth/locale/courses/' + course._id) перевод
+					br
+					br

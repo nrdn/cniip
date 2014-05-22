@@ -1,0 +1,54 @@
+extends ../../layout
+
+block title
+	title ПЕРЕВОДЫ
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/add.css')
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/add.js')
+
+block content_right
+	.navigator
+		.nav_title ПЕРЕВОДЫ
+		.nav_project_children
+		br
+		b.nav_settings_title настройки
+		//- .draft черновик
+		.toggle_eng перевод
+		br
+		b.form_submit ОТПРАВИТЬ
+
+block content
+	b old fields
+	br
+	br
+	each value, field in locale.old_fields
+		b=field + ': ' + value
+		br
+	br
+	br
+	b new fields
+	br
+	br
+	if (locale.new_fields)
+		each value, field in locale.new_fields
+			b=field + ': ' + value
+			br
+	b current fields
+	br
+	br
+	each value, field in locale.course.fields.toObject()
+		b=field + ': ' + value
+		br
+	.form_title Перевод:
+	form(action="", method="post")
+		.form_title Заголовок:
+		input.ru(type="text", name="ru[title]",)
+		input.en(type="text", name="en[title]", disabled)
+		.form_title Описание:
+		textarea.ru(name="ru[description]", rows="8",)
+		textarea.en(name="en[description]", rows="8", disabled)
+		br
+		input(type='submit', value='отправить')

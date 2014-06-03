@@ -156,6 +156,16 @@ app.route('/works/events').get(function(req, res) {
 
 
 // ------------------------
+// *** Publications Block ***
+// ------------------------
+
+
+app.route('/publications').get(function(req, res) {
+  res.render('publications');
+});
+
+
+// ------------------------
 // *** Set Locale Block ***
 // ------------------------
 

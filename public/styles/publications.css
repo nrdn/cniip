@@ -8,7 +8,7 @@ body {
 		/* outline: 1px solid #fc0; */
 }
 .publication_navigation_scroller {
-		background: #fff url(../images/publications/control_scroller_publication.png) 50% 5px no-repeat;
+		background: #fff url(/images/publications/control_scroller_publication.png) 50% 5px no-repeat;
 		width: 185px;
 		height: 42px;
 		transition-timing-function: ease-in-out;

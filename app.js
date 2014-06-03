@@ -138,6 +138,24 @@ main.get(function(req, res) {
 
 
 // ------------------------
+// *** Works Block ***
+// ------------------------
+
+
+app.route('/works/since').get(function(req, res) {
+  res.render('works/since.jade');
+});
+
+app.route('/works/grad').get(function(req, res) {
+  res.render('works/grad.jade');
+});
+
+app.route('/works/events').get(function(req, res) {
+  res.render('works/events.jade');
+});
+
+
+// ------------------------
 // *** Set Locale Block ***
 // ------------------------
 

@@ -4,16 +4,44 @@ html
 		include header
 	body
 		include counters
-		.maket
-			.main_block
-				.header_block
-					.menu_block
-				.content_left_block
-					block content_left
-				.content_right_block
-					block content_right
-				.content_block
-					block content
-				.content_under_block
-					block content_under
-				.footer_block
+		.main
+			.header
+				.header-inner
+					.header-block
+					ul.header-inner-menu
+						li.first-block
+							a(href='#') Институт
+							ul
+								li: a(href='#') История
+								li: a(href='#') Структура
+								li: a(href='#') Награды
+								li: a(href='#') Партнеры
+								li: a(href='#') Вакансии
+						li.second-block
+							a(href='#') Работы
+							ul
+								li: a(href='/works/since') Научные работы
+								li: a(href='/works/grad') Градостроительные работы
+								li: a(href='/works/events') Акции
+						li.third-block
+							a(href='#') Обучение
+							ul
+								li: a(href='#') Учебный центр
+								li: a(href='#') Аспирантура
+								li: a(href='#') Повышение квалификации
+						li.forth-block
+							a(href='#') Экспертиза
+							ul
+								li: a(href='#') Эксперты
+								li: a(href='#') Регламент проведения негосударственной экспертизы
+								li: a(href='#') Органы управления
+						li.fifth-block
+							a(href='#') Нормы
+						li.sixth-block
+							a(href='#') Лицензии
+						li.seventh-block
+							a(href='#') Контакты
+					.lang EN
+			block content
+			.footer
+				.date 2014

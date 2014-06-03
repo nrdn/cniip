@@ -10,5 +10,7 @@ block content_scripts
 	script(type='text/javascript', src='/scripts/main.js' + version)
 
 block content
-	h1 Главная
-	h2 Привет
+	.content.svgblock
+		.svgblock-container
+			img(src='/images/design/index.svg')
+		.svgblock-container.before

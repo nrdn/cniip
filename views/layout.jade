@@ -4,44 +4,37 @@ html
 		include header
 	body
 		include counters
-		.main
-			.header
-				.header-inner
-					.header-block
-					ul.header-inner-menu
-						li.first-block
-							a(href='#') Институт
-							ul
-								li: a(href='#') История
-								li: a(href='#') Структура
-								li: a(href='#') Награды
-								li: a(href='#') Партнеры
-								li: a(href='#') Вакансии
-						li.second-block
-							a(href='#') Работы
-							ul
-								li: a(href='/works/since') Научные работы
-								li: a(href='/works/grad') Градостроительные работы
-								li: a(href='/works/events') Акции
-						li.third-block
-							a(href='#') Обучение
-							ul
-								li: a(href='#') Учебный центр
-								li: a(href='#') Аспирантура
-								li: a(href='#') Повышение квалификации
-						li.forth-block
-							a(href='#') Экспертиза
-							ul
-								li: a(href='#') Эксперты
-								li: a(href='#') Регламент проведения негосударственной экспертизы
-								li: a(href='#') Органы управления
-						li.fifth-block
-							a(href='#') Нормы
-						li.sixth-block
-							a(href='#') Лицензии
-						li.seventh-block
-							a(href='#') Контакты
-					.lang EN
-			block content
-			.footer
+		.main_block
+			.header_block
+				a.logo(href='/'): img(src='logo.png')
+				.lang en
+				.menu_block
+					.menu_item Институт
+						.menu_drop
+							a(href='#') История
+							a(href='#') Структура
+							a(href='#') Награды
+							a(href='#') Партнеры
+							a(href='#') Вакансии
+					.menu_item Работы
+						.menu_drop
+							a(href='/works/since') Научные работы
+							a(href='/works/grad') Градостроительные работы
+							a(href='/works/events') Акции
+					.menu_item Обучение
+						.menu_drop
+							a(href='#') Учебный центр
+							a(href='#') Аспирантура
+							a(href='#') Повышение квалификации
+					.menu_item Экспертиза
+						.menu_drop
+							a(href='#') Эксперты
+							a(href='#') Регламент проведения негосударственной экспертизы
+							a(href='#') Органы управления
+					.menu_item Нормы
+					.menu_item Лицензии
+					.menu_item Контакты
+			.content_block
+				block content
+			.footer_block
 				.date 2014

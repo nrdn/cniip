@@ -11,8 +11,12 @@ block content_scripts
 
 block content
 	.maps_block
-		.map_item
-		.map_item
-		.map_item
-		.map_item
-		.map_base
+		img.map_item(src='/images/test/map1.png')
+		img.map_item(src='/images/test/map2.png')
+		img.map_item(src='/images/test/map3.png')
+		img.map_base(src='/images/test/map_base.png')
+		img.map_clear(src='/images/test/map_clear.png', usemap='#map')
+		map(name='map')
+			area(shape='poly', class='maps', coords='786, 326, 816, 421, 839, 431, 866, 421, 872, 392, 842, 294, 816, 284, 786, 294')
+			area(shape='poly', class='maps', coords='579, 186, 590, 247, 609, 245, 601, 181')
+			area(shape='poly', class='maps', coords='327, 78, 341, 99, 335, 152, 307, 189, 291, 212, 304, 228, 312, 279, 289, 362, 299, 381, 326, 408, 358, 420, 425, 381, 418, 349, 433, 318, 395, 296, 375, 251, 352, 234, 384, 153, 396, 118, 418, 128, 431, 113, 465, 103, 467, 58, 454, 26, 436, 38, 446, 59, 427, 83, 366, 81, 344, 51, 331, 49')

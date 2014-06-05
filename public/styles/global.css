@@ -3,8 +3,17 @@ body {
 	padding: 0;
 }
 
+/*html, body, .main_block {
+	height: 100%;
+}*/
+
+.content_block {
+	height: 90%;
+}
+
 .header_block {
-	height: 80px;
+	height: 60px;
+	z-index: 10000;
 	background-color: #d28f80;
 }
 
@@ -34,6 +43,6 @@ body {
 }
 
 .footer_block {
-	height: 80px;
+	height: 60px;
 	background-color: #b4a6ff;
 }

@@ -17,7 +17,7 @@ body {
 	background-color: #d28f80;
 }
 
-.logo img{
+.logo img {
 	width: 100px;
 	height: 50px;
 	float: left;
@@ -26,6 +26,7 @@ body {
 .menu_item {
 	float: left;
 	margin-right: 25px;
+	cursor: default;
 }
 
 .menu_item:hover .menu_drop{
@@ -34,6 +35,14 @@ body {
 
 .menu_item a {
 	display: block;
+	text-decoration: none;
+	color: black;
+	/*margin-top: 5px;*/
+	padding: 5px;
+}
+
+.menu_item a:hover {
+	text-decoration: underline;
 }
 
 .menu_drop {

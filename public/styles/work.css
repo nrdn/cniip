@@ -17,7 +17,7 @@
 }
 
 .map_block {
-	-webkit-user-drag: none;
+	/*-webkit-user-drag: none;	*/
 	cursor: move;
 }
 

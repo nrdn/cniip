@@ -19,7 +19,7 @@ body {
 
 .logo img {
 	width: 100px;
-	height: 50px;
+	height: auto;
 	float: left;
 }
 
@@ -49,6 +49,7 @@ body {
 	display: none;
 	position: absolute;
 	background-color: white;
+	margin-left: -5px;
 }
 
 .footer_block {

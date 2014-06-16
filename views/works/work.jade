@@ -1,0 +1,15 @@
+extends ../layout
+
+block title
+	title Работы
+
+block content_style
+	link(rel='stylesheet', type='text/css', href='/styles/work.css' + version)
+
+block content_scripts
+	script(type='text/javascript', src='/scripts/jquery-mapnavigate.js' + version)
+	script(type='text/javascript', src='/scripts/work.js' + version)
+
+
+block content
+		img.map_block(src='/images/test/work_map.jpg')

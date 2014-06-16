@@ -154,6 +154,13 @@ app.route('/works/events').get(function(req, res) {
   res.render('works/events.jade');
 });
 
+app.route('/works/publications').get(function(req, res) {
+  res.render('works/publications.jade');
+});
+
+app.route('/works/work').get(function(req, res) {
+  res.render('works/work.jade');
+});
 
 // ------------------------
 // *** Publications Block ***

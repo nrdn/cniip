@@ -1,0 +1,22 @@
+.content_block {
+	overflow: hidden;
+	background-color: #d29eb9;
+	position: absolute;
+	width: 100%;
+}
+
+.header_block {
+	z-index: 3;
+	position: relative;
+}
+
+.footer_block {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.map_block {
+	-webkit-user-drag: none;
+	cursor: move;
+}

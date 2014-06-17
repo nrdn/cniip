@@ -12,21 +12,42 @@ body {
 }
 
 .header_block {
-	height: 60px;
+	padding-top: 20px;
+	height: 40px;
 	z-index: 10000;
 	background-color: #d28f80;
 }
 
+.logo {
+	margin-left: 50px;
+	display: block;
+}
+
 .logo img {
-	width: 100px;
+	width: 120px;
 	height: auto;
 	float: left;
+}
+
+.menu_block {
+	margin-left: 200px;
 }
 
 .menu_item {
 	float: left;
 	margin-right: 25px;
 	cursor: default;
+	font: 12pt/12pt 'helveticaneuecyrlight';
+}
+
+a.menu_item {
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+a.menu_item:hover {
+	text-decoration: underline;
 }
 
 .menu_item:hover .menu_drop{
@@ -37,7 +58,6 @@ body {
 	display: block;
 	text-decoration: none;
 	color: black;
-	/*margin-top: 5px;*/
 	padding: 5px;
 }
 
@@ -50,9 +70,13 @@ body {
 	position: absolute;
 	background-color: white;
 	margin-left: -5px;
+	z-index: 3;
 }
 
 .footer_block {
-	height: 60px;
+	padding-top: 10px;
+	padding-left: 50px;
+	font: 8pt/10pt 'helveticaneuecyrheavy';
+	height: 20px;
 	background-color: #b4a6ff;
 }

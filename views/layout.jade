@@ -3,11 +3,12 @@ html
 	head
 		include header
 	body
+		- var date = new Date()
 		include counters
 		.main_block
 			.header_block
 				a.logo(href='/'): img(src='/images/design/logo.png')
-				.lang en
+				//- .lang en
 				.menu_block
 					.menu_item Институт
 						.menu_drop
@@ -22,7 +23,7 @@ html
 							a(href='/works/grad') Градостроительные работы
 							a(href='/works/events') Акции
 							a(href='/works/publications') Публикации
-							a(href='/works/work') Test map
+							a(href='/works/work') Пример работы
 					.menu_item Обучение
 						.menu_drop
 							a(href='#') Учебный центр
@@ -33,10 +34,9 @@ html
 							a(href='#') Эксперты
 							a(href='#') Регламент проведения негосударственной экспертизы
 							a(href='#') Органы управления
-					.menu_item Нормы
-					.menu_item Лицензии
-					.menu_item Контакты
+					a.menu_item(href='#') Нормы
+					a.menu_item(href='#') Лицензии
+					a.menu_item(href='#') Контакты
 			.content_block
 				block content
-			.footer_block
-				.date 2014
+			.footer_block= 'ЦНИИП градостроительства РААСН © ' + date.getFullYear()

@@ -23,7 +23,8 @@ var authorSchema = new Schema({
 var workSchema = new Schema({
 	title: String,
 	description: String,
-	category: String
+	category: String,
+	images: [String]
 });
 
 var eventSchema = new Schema({

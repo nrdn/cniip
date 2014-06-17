@@ -9,12 +9,27 @@
 	font-size: 16px;
 }
 
+.pub_image {
+	width: 200px;
+	-webkit-filter: grayscale(100%);
+}
+
+.pub_image:hover {
+	-webkit-filter: none;
+}
+
 .publications_items {
-	margin-top: 100px;
   overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
   font-size: 0;
   width: 100%;
-  outline: 2px solid red;
+}
+
+.pub_scroller {
+	width: 65px;
+	height: 45px;
+	background-image: url(/images/design/icons/pub_scroller.png);
+	background-repeat: no-repeat;
+	background-position: 2px;
 }

@@ -40,15 +40,27 @@ var publishSchema = new Schema({
 });
 
 var projectSchema = new Schema({
-	title: String,
-	description: String,
+	title: {
+		ru: String,
+		en: String
+	},
+	description: {
+		ru: String,
+		en: String
+	},
 	region: String,
 	works: [{ type: Schema.Types.ObjectId, ref: 'Work' }]
 });
 
 var workSchema = new Schema({
-	title: String,
-	description: String,
+	title: {
+		ru: String,
+		en: String
+	},
+	description: {
+		ru: String,
+		en: String
+	},
 	category: String,
 	image: String
 });

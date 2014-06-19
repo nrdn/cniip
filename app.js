@@ -341,8 +341,53 @@ edit_publish.post(checkAuth, function(req, res) {
 });
 
 
+// ------------------------
+// *** Admin Projects Block ***
+// ------------------------
 
 
+app.route('/auth/projects').get(checkAuth, function(req, res) {
+  Project.find().exec(function(err, projects) {
+    res.render('auth/projects', {projects: projects});
+  });
+});
+
+
+// ------------------------
+// *** Add Projects Block ***
+// ------------------------
+
+
+app.route('/auth/projects/add').get(checkAuth, function(req, res) {
+  res.render('auth/projects/add.jade');
+});
+
+app.route('/auth/projects/add').post(checkAuth, function(req, res) {
+  var project = new Project();
+  var post = req.body;
+
+  project.title.ru = post.ru.title;
+  project.description.ru = post.ru.description;
+  project.region = post.region;
+
+  project.save(function(err, project) {
+    res.redirect('/auth/projects');
+  });
+});
+
+
+// ------------------------
+// *** Edit Projects Block ***
+// ------------------------
+
+
+app.route('/auth/projects/edit/:project_id').get(checkAuth, function(req, res) {
+  var id = req.params.project_id;
+
+  Project.findById(id).exec(function(err, project) {
+    res.render('auth/projects/edit.jade', {project: project});
+  });
+});
 
 
 

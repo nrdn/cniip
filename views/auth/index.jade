@@ -19,12 +19,16 @@ block content
 	.title.star ЗВЕЗДОЧЕТ
 	.main_menu_block
 		br
-		b Курсы:
+		b Авторы:
+		a(href='/auth/authors')= ' редактировать'
 		br
-		a(href='/auth/add/course')= ' добавить '
+		br
+		b Проекты:
+		a(href='/auth/projects')= ' редактировать'
+		br
+		br
+		b Работы:
+		br
+		a(href='/auth/add/work')= ' добавить '
 		||
-		a(href='/auth/edit/courses')= ' редактировать'
-		br
-		b Перевод:
-		br
-		a(href='/auth/locales')= ' добавить '
+		a(href='/auth/edit/works')= ' редактировать'

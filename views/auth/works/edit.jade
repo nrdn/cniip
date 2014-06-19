@@ -1,7 +1,7 @@
 extends ../../layout
 
 block title
-	title ДОБАВИТЬ КУРС
+	title РЕДАКТИРОВАТЬ РАБОТУ
 
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/add.css')
@@ -11,11 +11,10 @@ block content_scripts
 
 block content_right
 	.navigator
-		.nav_title НОВОСТЬ
+		.nav_title РАБОТА
 		.nav_project_children
 		br
 		b.nav_settings_title настройки
-		//- .draft черновик
 		.toggle_eng перевод
 		br
 		b.form_submit ОТПРАВИТЬ
@@ -23,23 +22,28 @@ block content_right
 block content
 	.form_block
 		a.back_link(href='/auth') < Назад
-		.title ДОБАВИТЬ КУРС
-		form(action="/auth/add/course", method="post")
+		.title РЕДАКТИРОВАТЬ РАБОТУ
+		form(action="/auth/add/work", method="post")
 			.form_title Заголовок:
-			input.ru(type="text", name="ru[title]",)
+			input.ru(type="text", name="ru[title]", value=work.title)
 			input.en(type="text", name="en[title]", disabled)
 			.form_title Описание:
-			textarea.ru(name="ru[description]", rows="8",)
+			textarea.ru(name="ru[description]", rows="8",)= work.description
 			textarea.en(name="en[description]", rows="8", disabled)
+			.form_title Фото:
+			input(type="file", name="photo")
+			.form_title Статус:
+			select(name='category')
+				option(value='since') научная
+				option(value='grad') градостроительная
+			.form_title Регион:
+			select(name='region')
+				option(value='') нет
+				option(value='altai') Алтайский край
+				option(value='belg') Белгородская область
+			br
 			br
 			input(type='submit', value='отправить')
-			//- .form_title Фото:
-			//- input(type="file", name="photo")
-			//- .form_title Статус:
-			//- select(name='status')
-			//- 	option(value='') нет
-			//- 	option(value='hot') важная
-			//- 	option(value='pin') закрепленная
 			//- .form_title Прикрепить события:
 			//- .snake
 			//- 	input.back(type="button", value="<")

@@ -9,22 +9,48 @@ var userSchema = new Schema({
 		date: {type: Date, default: Date.now},
 });
 
-var publishSchema = new Schema({
-	title: String,
-	description: String,
-});
-
 var authorSchema = new Schema({
-	name: String,
+	name: {
+		ru: String,
+		en: String
+	},
+	description: {
+		ru: String,
+		en: String
+	},
 	photo: String,
 	publishes: [{ type: Schema.Types.ObjectId, ref: 'Publish' }]
+});
+
+var publishSchema = new Schema({
+	title: {
+		ru: String,
+		en: String
+	},
+	description: {
+		ru: String,
+		en: String
+	},
+	source: {
+		name: String,
+		link: String
+	},
+	sub_authors: [String],
+	files: [String]
+});
+
+var projectSchema = new Schema({
+	title: String,
+	description: String,
+	region: String,
+	works: [{ type: Schema.Types.ObjectId, ref: 'Work' }]
 });
 
 var workSchema = new Schema({
 	title: String,
 	description: String,
 	category: String,
-	images: [String]
+	image: String
 });
 
 var eventSchema = new Schema({
@@ -48,6 +74,7 @@ var licenseSchema = new Schema({
 module.exports.User = mongoose.model('User', userSchema);
 module.exports.Publish = mongoose.model('Publish', publishSchema);
 module.exports.Author = mongoose.model('Author', authorSchema);
+module.exports.Project = mongoose.model('Project', projectSchema);
 module.exports.Work = mongoose.model('Work', workSchema);
 module.exports.Event = mongoose.model('Event', eventSchema);
 module.exports.Press = mongoose.model('Press', pressSchema);

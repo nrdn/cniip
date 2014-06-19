@@ -79,6 +79,7 @@ var User = models.User;
 var Publish = models.Publish;
 var Author = models.Author;
 var Work = models.Work;
+var Project = models.Project;
 var Event = models.Event;
 var Press = models.Press;
 var License = models.License;
@@ -194,79 +195,205 @@ app.route('/auth').get(checkAuth, function (req, res) {
 
 
 // ------------------------
-// *** Add Course Block ***
+// *** Admin Authors Block ***
 // ------------------------
 
 
-var add_course = app.route('/auth/add/course');
-
-add_course.get(checkAuth, function(req, res) {
-  res.render('auth/courses/add.jade');
+app.route('/auth/authors').get(checkAuth, function(req, res) {
+  Author.find().exec(function(err, authors) {
+    res.render('auth/authors/', {authors: authors});
+  });
 });
 
-add_course.post(function(req, res) {
+
+// ------------------------
+// *** Add Authors Block ***
+// ------------------------
+
+
+var add_authors = app.route('/auth/authors/add');
+
+add_authors.get(checkAuth, function(req, res) {
+  res.render('auth/authors/add.jade');
+});
+
+add_authors.post(checkAuth, function(req, res) {
   var post = req.body;
-  var date_modify = new Date();
-  var course = new Course();
+  var files = req.files;
 
-  course.langs = {
-    languages: ['ru','en','fr'],
-    def: 'ru'
-  }
+  var author = new Author();
 
-  course.title.ru.content = post.ru.title;
-  course.title.ru.date = date_modify;
-  course.description.ru.content = post.ru.description;
-  course.description.ru.date = date_modify;
+  author.name.ru = post.ru.name;
+  author.description.ru = post.ru.description;
 
-  course.save(function(err, course) {
+  author.save(function(err, author) {
+    res.redirect('/auth/authors');
+  });
+});
+
+
+// ------------------------
+// *** Edit Authors Block ***
+// ------------------------
+
+
+var edit_authors = app.route('/auth/authors/edit/:id');
+
+edit_authors.get(checkAuth, function(req, res) {
+  var id = req.params.id;
+
+  Author.findById(id).exec(function(err, author) {
+    res.render('auth/authors/edit.jade', {author: author});
+  });
+});
+
+edit_authors.post(checkAuth, function(req, res) {
+  var post = req.body;
+  var id = req.params.id;
+
+  Author.findById(id).exec(function(err, author) {
+
+    author.name.ru = post.ru.name;
+    author.description.ru = post.ru.description;
+
+    author.save(function(err, work) {
+      res.redirect('/auth/authors');
+    });
+  });
+});
+
+
+// ------------------------
+// *** Add Publications Block ***
+// ------------------------
+
+
+app.route('/auth/publications/:author_id').get(checkAuth, function(req, res) {
+  var author_id = req.params.author_id;
+
+  Author.findById(author_id).populate('publishes').exec(function(err, author) {
+    res.render('auth/publications', {author: author});
+  });
+});
+
+app.route('/auth/publications/:author_id/add').get(checkAuth, function(req, res) {
+  res.render('auth/publications/add.jade');
+});
+
+app.route('/auth/publications/:author_id/add').post(checkAuth, function(req, res) {
+  var publish = new Publish();
+  var id = req.params.author_id;
+  var post = req.body;
+
+  publish.title.ru = post.ru.title;
+  publish.description.ru = post.ru.description;
+
+  publish.save(function(err, publish) {
+    Author.findById(id).exec(function(err, author) {
+      author.publishes.push(publish._id);
+      author.save(function(err, author) {
+        res.redirect('/auth/publications/' + id);
+      });
+    });
+  });
+});
+
+
+app.route('/auth/publications/edit/:publish_id').get(checkAuth, function(req, res) {
+  var id = req.params.publish_id;
+
+  Publish.findById(id).exec(function(err, publish) {
+    res.render('auth/publications/edit.jade', {publish: publish});
+  });
+});
+
+app.route('/auth/publications/edit/:publish_id').post(checkAuth, function(req, res) {
+  var id = req.params.publish_id;
+  var post = req.body;
+
+  Publish.findById(id).exec(function(err, publish) {
+    publish.title.ru = post.ru.title;
+    publish.description.ru = post.ru.description;
+
+    publish.save(function(err, publish) {
+      res.redirect('back');
+    });
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------
+// *** Add Work Block ***
+// ------------------------
+
+
+var add_work = app.route('/auth/add/work');
+
+add_work.get(checkAuth, function(req, res) {
+  res.render('auth/works/add.jade');
+});
+
+add_work.post(function(req, res) {
+  var post = req.body;
+  var work = new Work();
+
+  work.title = post.ru.title;
+  work.description = post.ru.description;
+  work.category = post.category;
+  work.region = post.region;
+
+  work.save(function(err, work) {
     res.redirect('back');
   });
 });
 
 
 // ------------------------
-// *** Edit Courses Block ***
+// *** Edit Works Block ***
 // ------------------------
 
 
-app.route('/auth/edit/courses').get(checkAuth, function(req, res) {
-  Course.find().exec(function(err, courses) {
-    res.render('auth/courses', {courses: courses});
+app.route('/auth/edit/works').get(checkAuth, function(req, res) {
+  Work.find().exec(function(err, works) {
+    res.render('auth/works', {works: works});
   });
 });
 
-app.route('/auth/edit/courses/:id').get(checkAuth, function(req, res) {
+app.route('/auth/edit/works/:id').get(checkAuth, function(req, res) {
   var id = req.params.id;
 
-  Course.findById(id).exec(function(err, course) {
-    res.render('auth/courses/edit.jade', {course: course});
+  Work.findById(id).exec(function(err, work) {
+    res.render('auth/works/edit.jade', {work: work});
   });
 });
 
-app.route('/auth/edit/courses/:id').post(function(req, res) {
+app.route('/auth/edit/works/:id').post(function(req, res) {
   var id = req.params.id;
   var post = req.body;
   var date_modify = new Date();
 
-  Course.findById(id).exec(function(err, course) {
+  Work.findById(id).exec(function(err, course) {
 
-    course.langs = {
-      languages: ['ru','en','fr'],
-      def: 'ru'
-    }
+    work.title = post.ru.title;
+    work.description = post.ru.description;
+    work.category = post.category;
+    work.region = post.region;
 
-    course.title.ru.content = post.ru.title;
-    course.title.ru.date = date_modify;
-    course.description.ru.content = post.ru.description;
-    course.description.ru.date = date_modify;
-
-    course.save(function(err, course) {
+    work.save(function(err, work) {
       res.redirect('back');
     });
   });
 });
-
 
 
 // ------------------------

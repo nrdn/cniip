@@ -1,7 +1,7 @@
 extends ../../layout
 
 block title
-	title СПИСОК КУРСОВ
+	title СПИСОК РАБОТ
 
 block content_style
 	link(rel='stylesheet', type='text/css', href='/styles/add.css')
@@ -11,12 +11,12 @@ block content_scripts
 
 block content
 	a.back_link(href='/auth') < Назад
-	.title СПИСОК КУРСОВ
+	.title СПИСОК РАБОТ
 	br
 	.main_menu_block
-		each course in courses
+		each work in works
 			.news
-				a.rm_news(href='#', id=course._id)= 'удалить '
+				a.rm_news(href='#', id=work._id)= 'удалить '
 				!=' | '
 				a(href='/auth/edit/courses/' + course._id)= course.title.ru.content
 				b= ' ---> '

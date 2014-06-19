@@ -3,15 +3,16 @@ a,b {
 }
 
 .main_menu_block {
-	margin-left: 10px;
+	/*margin-left: 50px;*/
 }
 
 .content_block {
+	width: 800px;
+	padding-left: 50px;
 	min-height: 600px;
-	padding-bottom: 100px;
-	width: 928px;
 	background-color: white;
-	border: 1px solid black;
+	padding-bottom: 100px;
+	/*border: 1px solid black;*/
 }
 
 .head_title_block {
@@ -24,13 +25,13 @@ a,b {
 
 input, textarea, select {
 	font-size: 16px;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 
 .ru {
 	width: 440px;
 	display: inline-block;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
 }
 
 .en {
@@ -39,12 +40,12 @@ input, textarea, select {
 }
 
 .back_link {
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 
 .title {
 	margin-top: 20px;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 	font-size: 20pt;
 }
 
@@ -52,7 +53,7 @@ input, textarea, select {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	font-size: 14pt;
-	margin-left: 10px;
+	/*margin-left: 10px;*/
 }
 
 .form_section {
@@ -63,67 +64,6 @@ input, textarea, select {
 	font-weight: bold;
 }
 
-
-/*
-	Schedule
-*/
-
-.schedule_item {
-	margin-left: 10px;
-}
-
-.schedule_date {
-	font-size: 24px;
-}
-
-.date_event {
-	margin-left: 10px;
-}
-
-/*
-	Event
-*/
-
-.news_convert {
-	margin-top: 15px;
-	margin-left: 10px;
-	width: 115px;
-	cursor: pointer;
-	font-size: 24px;
-	border-bottom: 2px solid black;
-}
-
-
-
-.event_convert {
-	margin-top: 15px;
-	margin-left: 10px;
-	width: 120px;
-	cursor: pointer;
-	font-size: 24px;
-	border-bottom: 2px solid black;
-}
-
-.form_block_project {
-	display: none;
-}
-
-.project_convert {
-	margin-top: 15px;
-	margin-left: 10px;
-	width: 160px;
-	cursor: pointer;
-	font-size: 24px;
-	border-bottom: 2px solid black;
-}
-
-.add_child {
-	margin-left: 10px;
-	width: 190px;
-	cursor: pointer;
-	font-size: 24px;
-	border-bottom: 2px solid black;
-}
 
 /*
 	Navigator

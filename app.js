@@ -239,6 +239,7 @@ add_authors.post(checkAuth, function(req, res) {
 
 var edit_authors = app.route('/auth/authors/edit/:id');
 
+
 edit_authors.get(checkAuth, function(req, res) {
   var id = req.params.id;
 
@@ -264,7 +265,7 @@ edit_authors.post(checkAuth, function(req, res) {
 
 
 // ------------------------
-// *** Add Publications Block ***
+// *** Admin Publications Block ***
 // ------------------------
 
 
@@ -276,11 +277,21 @@ app.route('/auth/publications/:author_id').get(checkAuth, function(req, res) {
   });
 });
 
-app.route('/auth/publications/:author_id/add').get(checkAuth, function(req, res) {
+
+
+// ------------------------
+// *** Add Publications Block ***
+// ------------------------
+
+
+var add_publish = app.route('/auth/publications/:author_id/add');
+
+
+add_publish.get(checkAuth, function(req, res) {
   res.render('auth/publications/add.jade');
 });
 
-app.route('/auth/publications/:author_id/add').post(checkAuth, function(req, res) {
+add_publish.post(checkAuth, function(req, res) {
   var publish = new Publish();
   var id = req.params.author_id;
   var post = req.body;
@@ -299,7 +310,15 @@ app.route('/auth/publications/:author_id/add').post(checkAuth, function(req, res
 });
 
 
-app.route('/auth/publications/edit/:publish_id').get(checkAuth, function(req, res) {
+// ------------------------
+// *** Edit Publications Block ***
+// ------------------------
+
+
+var edit_publish = app.route('/auth/publications/edit/:publish_id');
+
+
+edit_publish.get(checkAuth, function(req, res) {
   var id = req.params.publish_id;
 
   Publish.findById(id).exec(function(err, publish) {
@@ -307,7 +326,7 @@ app.route('/auth/publications/edit/:publish_id').get(checkAuth, function(req, re
   });
 });
 
-app.route('/auth/publications/edit/:publish_id').post(checkAuth, function(req, res) {
+edit_publish.post(checkAuth, function(req, res) {
   var id = req.params.publish_id;
   var post = req.body;
 

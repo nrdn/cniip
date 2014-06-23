@@ -1,12 +1,20 @@
-.works_block {
-	overflow: hidden;
+.content_block {
 	margin-left: 50px;
 }
 
-.work_navigate {
+.content_title {
 	float: left;
+	margin-right: 20px;
+}
+
+.work_navigate {
 	margin-right: 10px;
+	width: 25px;
 	cursor: pointer;
+}
+
+.works_block {
+	overflow: hidden;
 }
 
 .work_items {
@@ -18,9 +26,14 @@
 	float: left;
 	margin-right: 5%;
 	min-width: 200px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	text-decoration: none;
 	color: black;
+}
+
+.work_title {
+	width: 100px;
+	font: 12pt/12pt 'helveticaneuecyrlight';
 }
 
 .work_img {
@@ -28,7 +41,11 @@
 	height: 200px;
 	display: block;
 	font: 0;
-	background-color: #29b3d2;
+	/*background-color: #29b3d2;*/
+}
+
+.work_item:hover polygon {
+	fill: #C7C7C2;
 }
 
 .works_map {

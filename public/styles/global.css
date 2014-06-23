@@ -11,6 +11,14 @@ body {
 	height: 90%;
 }
 
+.content_title_block {
+	overflow: hidden;
+}
+
+.content_title {
+	font: 14pt/16pt 'helveticaneuecyrlight';
+}
+
 .header_block {
 	padding-top: 20px;
 	height: 40px;

@@ -134,7 +134,7 @@ var deleteFolderRecursive = function(path) {
 var main = app.route('/');
 
 main.get(function(req, res) {
-  res.render('main', {fs: fs, pub_dir: __dirname + '/public/'});
+  res.render('main');
 });
 
 
@@ -148,7 +148,7 @@ app.route('/works/since').get(function(req, res) {
 });
 
 app.route('/works/grad').get(function(req, res) {
-  res.render('works/grad.jade');
+  res.render('works/grad.jade', {fs: require('fs'), dir: __dirname + '/public/'});
 });
 
 app.route('/works/events').get(function(req, res) {

@@ -10,16 +10,12 @@ block content_scripts
 	script(type='text/javascript', src='/scripts/jquery.rwdImageMaps.min.js' + version)
 	script(type='text/javascript', src='/scripts/main.js' + version)
 
-mixin svg(file)
-	- var svg = fs.readFileSync(file)
-	.map_regions!= svg
 
 block content
 	.maps_block
-		//- img.map_item(src='/images/test/svg_one.svg')
-		//- img.map_base(src='/images/test/demo/svg_base.svg')
-		//- img.map_clear(src='/images/test/demo/clear.png', usemap='#map')
-		+svg(pub_dir + '/images/test/demo/svg_base.svg')
+		img.map_item(src='/images/test/demo/one.png')
+		img.map_base(src='/images/test/demo/base.png')
+		img.map_clear(src='/images/test/demo/clear.png', usemap='#map')
 
 		map(name='map')
 			area(shape='poly', class='maps', coords='786, 326, 816, 421, 839, 431, 866, 421, 872, 392, 842, 294, 816, 284, 786, 294')

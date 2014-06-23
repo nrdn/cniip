@@ -23,7 +23,7 @@ html
 							a(href='/works/grad') Градостроительные работы
 							a(href='/works/events') Акции
 							a(href='/works/publications') Публикации
-							a(href='/works/work') Пример работы
+							//- a(href='/works/work') Пример работы
 					.menu_item Обучение
 						.menu_drop
 							a(href='#') Учебный центр
@@ -38,5 +38,7 @@ html
 					a.menu_item(href='#') Лицензии
 					a.menu_item(href='#') Контакты
 			.content_block
+				.content_title_block
+					block content_title
 				block content
 			.footer_block= 'ЦНИИП градостроительства РААСН © ' + date.getFullYear()

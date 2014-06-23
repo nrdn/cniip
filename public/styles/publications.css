@@ -1,3 +1,7 @@
+.content_title_block {
+	margin-left: 50px;
+}
+
 .footer_block {
 	bottom: 0;
 	position: fixed;
@@ -12,6 +16,12 @@
 .pub_image {
 	width: 200px;
 	-webkit-filter: grayscale(100%);
+}
+
+.description {
+	width: 200px;
+	height: 200px;
+	background-color: #abcfd2;
 }
 
 .pub_image:hover {

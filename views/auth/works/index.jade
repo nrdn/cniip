@@ -14,12 +14,12 @@ block content
 	.title СПИСОК РАБОТ
 	br
 	.main_menu_block
-		each work in works
+		br
+		a.add(href='/auth/works/' + project._id + '/add') добавить работу
+		br
+		br
+		each work in project.works
 			.news
 				a.rm_news(href='#', id=work._id)= 'удалить '
 				!=' | '
-				a(href='/auth/edit/courses/' + course._id)= course.title.ru.content
-				b= ' ---> '
-				a(href='/auth/locale/courses/' + course._id) перевод
-					br
-					br
+				a(href='/auth/works/edit/' + work._id)= work.title.ru

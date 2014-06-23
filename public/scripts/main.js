@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	$('img[usemap]').rwdImageMaps();
 	$('.maps').on({
 	    mouseout: function() {
 	        var index = $(this).index();

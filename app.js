@@ -134,7 +134,7 @@ var deleteFolderRecursive = function(path) {
 var main = app.route('/');
 
 main.get(function(req, res) {
-  res.render('main');
+  res.render('main', {fs: fs, pub_dir: __dirname + '/public/'});
 });
 
 
@@ -391,8 +391,18 @@ app.route('/auth/projects/edit/:project_id').get(checkAuth, function(req, res) {
 
 
 
+// ------------------------
+// *** Admin Works Block ***
+// ------------------------
 
 
+app.route('/auth/works/:project_id').get(checkAuth, function(req, res) {
+  var id = req.params.project_id;
+
+  Project.findById(id).populate('works').exec(function(err, project) {
+    res.render('auth/works', {project: project});
+  });
+});
 
 
 
@@ -401,7 +411,7 @@ app.route('/auth/projects/edit/:project_id').get(checkAuth, function(req, res) {
 // ------------------------
 
 
-var add_work = app.route('/auth/add/work');
+var add_work = app.route('/auth/works/:project_id/add');
 
 add_work.get(checkAuth, function(req, res) {
   res.render('auth/works/add.jade');
@@ -410,14 +420,20 @@ add_work.get(checkAuth, function(req, res) {
 add_work.post(function(req, res) {
   var post = req.body;
   var work = new Work();
+  var id = req.params.project_id;
 
-  work.title = post.ru.title;
-  work.description = post.ru.description;
+  work.title.ru = post.ru.title;
+  work.description.ru = post.ru.description;
   work.category = post.category;
   work.region = post.region;
 
   work.save(function(err, work) {
-    res.redirect('back');
+    Project.findById(id).exec(function(err, project) {
+      project.works.push(work._id);
+      project.save(function(err, project) {
+        res.redirect('back');
+      });
+    });
   });
 });
 
@@ -426,14 +442,9 @@ add_work.post(function(req, res) {
 // *** Edit Works Block ***
 // ------------------------
 
+var edit_works = app.route('/auth/works/edit/:id')
 
-app.route('/auth/edit/works').get(checkAuth, function(req, res) {
-  Work.find().exec(function(err, works) {
-    res.render('auth/works', {works: works});
-  });
-});
-
-app.route('/auth/edit/works/:id').get(checkAuth, function(req, res) {
+edit_works.get(checkAuth, function(req, res) {
   var id = req.params.id;
 
   Work.findById(id).exec(function(err, work) {
@@ -441,17 +452,15 @@ app.route('/auth/edit/works/:id').get(checkAuth, function(req, res) {
   });
 });
 
-app.route('/auth/edit/works/:id').post(function(req, res) {
+edit_works.post(function(req, res) {
   var id = req.params.id;
   var post = req.body;
   var date_modify = new Date();
 
-  Work.findById(id).exec(function(err, course) {
-
-    work.title = post.ru.title;
-    work.description = post.ru.description;
+  Work.findById(id).exec(function(err, work) {
+    work.title.ru = post.ru.title;
+    work.description.ru = post.ru.description;
     work.category = post.category;
-    work.region = post.region;
 
     work.save(function(err, work) {
       res.redirect('back');

@@ -23,7 +23,8 @@ body {
 	padding-top: 20px;
 	height: 40px;
 	z-index: 10000;
-	background-color: #d28f80;
+	background-color: white;
+	/*background-color: #d28f80;*/
 }
 
 .logo {
@@ -87,5 +88,6 @@ a.menu_item:hover {
 	padding-left: 50px;
 	font: 8pt/10pt 'helveticaneuecyrheavy';
 	height: 20px;
-	background-color: #b4a6ff;
+	background-color: white;
+	/*background-color: #b4a6ff;*/
 }

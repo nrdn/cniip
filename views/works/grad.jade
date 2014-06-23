@@ -21,53 +21,58 @@ block content_title
 
 block content
 	.works_block
-		//- .works_navigator
-			img.work_navigate.regions(src='/images/design/icons/selectors/regions.png')
-			img.work_navigate.map(src='/images/design/icons/selectors/map.png')
 		.work_items
 			a.work_item(href='/works/work')
 				.work_title Алтайский край
-				+work_img(dir + '/images/design/regions/altai.svg')
-				//- img.work_img(src='/images/design/regions/altai.svg')
+				.work_img: include ../../public/images/design/regions/altai.svg
+
 			a.work_item(href='/works/work')
 				.work_title Белгородская область
-				+work_img(dir + '/images/design/regions/belg.svg')
-				//- img.work_img(src='/images/design/regions/belg.svg')
+				.work_img: include ../../public/images/design/regions/belg.svg
+
 			a.work_item(href='/works/work')
 				.work_title Владимирская область
-				+work_img(dir + '/images/design/regions/vladimir.svg')
-				//- img.work_img(src='/images/design/regions/vladimir.svg')
+				.work_img: include ../../public/images/design/regions/vladimir.svg
+
 			a.work_item(href='/works/work')
 				.work_title Вологодская область
-				+work_img(dir + '/images/design/regions/vlg.svg')
-				//- img.work_img(src='/images/design/regions/vlg.svg')
+				.work_img: include ../../public/images/design/regions/vlg.svg
+
 			a.work_item(href='/works/work')
 				.work_title Калининградская область
-				+work_img(dir + '/images/design/regions/kgd.svg')
-				//- img.work_img(src='/images/design/regions/kgd.svg')
+				.work_img: include ../../public/images/design/regions/kgd.svg
+
 			a.work_item(href='/works/work')
 				.work_title Кемеровская область
-				+work_img(dir + '/images/design/regions/kem.svg')
+				.work_img: include ../../public/images/design/regions/kem.svg
+
 			a.work_item(href='/works/work')
 				.work_title Новосибирская область
-				+work_img(dir + '/images/design/regions/nvs.svg')
+				.work_img: include ../../public/images/design/regions/nvs.svg
+
 			a.work_item(href='/works/work')
 				.work_title Пермский край
-				+work_img(dir + '/images/design/regions/perm.svg')
+				.work_img: include ../../public/images/design/regions/perm.svg
+
 			a.work_item(href='/works/work')
 				.work_title Приморский край
-				+work_img(dir + '/images/design/regions/prim.svg')
+				.work_img: include ../../public/images/design/regions/prim.svg
+
 			a.work_item(href='/works/work')
 				.work_title Республика Алтай
-				+work_img(dir + '/images/design/regions/r_altai.svg')
+				.work_img: include ../../public/images/design/regions/r_altai.svg
+
 			a.work_item(href='/works/work')
 				.work_title Республика Ингушетия
-				+work_img(dir + '/images/design/regions/ing.svg')
+				.work_img: include ../../public/images/design/regions/ing.svg
+
 			a.work_item(href='/works/work')
 				.work_title Смоленская область
-				+work_img(dir + '/images/design/regions/smol.svg')
+				.work_img: include ../../public/images/design/regions/smol.svg
+
 			a.work_item(href='/works/work')
 				.work_title Читинская область
-				+work_img(dir + '/images/design/regions/chit.svg')
+				.work_img: include ../../public/images/design/regions/chit.svg
+
 		.works_map
 			img(src='/images/works_russia.svg', alt='')

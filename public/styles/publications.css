@@ -2,15 +2,12 @@
 	margin-left: 50px;
 }
 
-.footer_block {
-	bottom: 0;
-	position: fixed;
-	width: 100%;
-}
-
 .pub_item {
 	display: inline-block;
-	font-size: 16px;
+}
+
+.pub_description {
+	overflow: hidden;
 }
 
 .pub_image {
@@ -18,10 +15,20 @@
 	-webkit-filter: grayscale(100%);
 }
 
+.name {
+	font: 12pt/12pt 'helveticaneuecyrlight';
+	width: 180px;
+	margin-top: 10px;
+	/*background-color: #8faad2;*/
+	white-space: normal;
+}
+
 .description {
 	width: 200px;
-	height: 200px;
+	margin-top: 10px;
 	background-color: #abcfd2;
+	/*white-space: normal;*/
+	font: 12pt/12pt 'helveticaneuecyrlight';
 }
 
 .pub_image:hover {
@@ -39,7 +46,38 @@
 .pub_scroller {
 	width: 65px;
 	height: 45px;
+	margin-top: 20px;
+	margin-bottom: 10px;
 	background-image: url(/images/design/icons/pub_scroller.png);
 	background-repeat: no-repeat;
 	background-position: 2px;
+}
+
+
+
+
+
+
+.publications_description_block {
+	margin-top: 80px;
+	margin-left: 290px;
+}
+
+
+
+
+.author_description {
+	width: 500px;
+	font: 11pt/12pt 'helveticaneuecyrlight';
+}
+
+.pub_title {
+	font: 11pt/12pt 'helveticaneuecyrbold';
+}
+
+
+.footer_block {
+	bottom: 0;
+	position: fixed;
+	width: 100%;
 }

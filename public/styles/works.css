@@ -33,7 +33,12 @@
 
 .work_title {
 	width: 100px;
+	color: #C7C7C2;
 	font: 12pt/12pt 'helveticaneuecyrlight';
+}
+
+.work_item:hover .work_title {
+	color: black
 }
 
 .work_img {
